@@ -13,9 +13,9 @@ class AddPhoto extends Component {
         const imageLink = event.target.elements.link.value
         const imageDescription = event.target.elements.description.value
         const post ={
-            id=0,
-            description = imageDescription,
-            imageLink=imageLink
+            id:0,
+            description : imageDescription,
+            imageLink:imageLink
         }
 
         if(imageLink && imageDescription){

@@ -45,10 +45,10 @@ class Main extends Component {
     }));
   }
 
-  addPhoto(postSubmitted){
-    this.setState(state =>({
-      posts:state.post.concate([postSubmitted])
-    }))
+  addPhoto(postSubmitted) {
+    this.setState((state) => ({
+      posts: state.posts.concat([postSubmitted]),
+    }));
   }
 
   // navigate() {
@@ -68,7 +68,8 @@ class Main extends Component {
     return (
       <div>
         <Route
-          exact path="/"
+          exact
+          path="/"
           render={() => (
             <div>
               <Title title={"Photowall"} />
@@ -79,10 +80,17 @@ class Main extends Component {
             </div>
           )}
         />
-        <Route path="/AddPhoto" render={(history)=>(<AddPhoto onAddPhoto = {(addedPost)=>{
-          this.addPhoto(addedPost)
-          history.push('/ ')
-        }}/>)} />
+        <Route
+          path="/AddPhoto"
+          render={({history}) => (
+            <AddPhoto
+              onAddPhoto={(addedPost) => {
+                this.addPhoto(addedPost);
+                history.push("/");
+              }}
+            />
+          )}
+        />
       </div>
     );
   }
