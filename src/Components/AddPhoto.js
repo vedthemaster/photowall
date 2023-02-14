@@ -13,7 +13,7 @@ class AddPhoto extends Component {
         const imageLink = event.target.elements.link.value
         const imageDescription = event.target.elements.description.value
         const post ={
-            id:0,
+            id:Number(new Date()),
             description : imageDescription,
             imageLink:imageLink
         }
